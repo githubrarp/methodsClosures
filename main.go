@@ -2,39 +2,33 @@ package main
 
 import "fmt"
 
-func (c celsius) celsius2F(entry float64) fahrenheit {
-	result := fahrenheit(entry*1.8 + 32)
-	return result
-}
-
-func (c celsius) celsius2Kelvin(entry float64) kelvin {
-	result := kelvin(entry + 273.5)
-	return result
-}
-
-func (f fahrenheit) fahrenheit2Kelvin(entry float64) kelvin {
-	result := kelvin((entry + 459.67) * (5.0 / 9))
-	return result
-}
-
-func (f fahrenheit) fahrenheit2Celsius(entry float64) celsius {
-	result := celsius((entry - 32) / 1.8)
-	return result
-}
-
-func (k kelvin) kelvin2F(entry float64) fahrenheit {
-	result := fahrenheit((entry * (9.0 / 5)) - 459.67)
-	return result
-}
-
-func (k kelvin) kelvin2Celsius(entry float64) celsius {
-	result := celsius(entry - 273.15)
-	return result
-}
-
 type celsius float64
 type fahrenheit float64
 type kelvin float64
+
+func (c celsius) celsius2F(entry float64) fahrenheit {
+	return fahrenheit(entry*1.8 + 32)
+}
+
+func (c celsius) celsius2Kelvin(entry float64) kelvin {
+	return kelvin(entry + 273.5)
+}
+
+func (f fahrenheit) fahrenheit2Kelvin(entry float64) kelvin {
+	return kelvin((entry + 459.67) * (5.0 / 9))
+}
+
+func (f fahrenheit) fahrenheit2Celsius(entry float64) celsius {
+	return celsius((entry - 32) / 1.8)
+}
+
+func (k kelvin) kelvin2F(entry float64) fahrenheit {
+	return fahrenheit((entry * (9.0 / 5)) - 459.67)
+}
+
+func (k kelvin) kelvin2Celsius(entry float64) celsius {
+	return celsius(entry - 273.15)
+}
 
 func main() {
 
